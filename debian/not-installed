@@ -1,0 +1,10 @@
+usr/share/gocode/src/github.com/danos/vyatta-kdump/cmd/kdump-op/main.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/cmd/vci-kdump/main.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/config.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/internal/config/config.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/internal/kdump/kdump.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/internal/log/log.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/internal/rpc/rpc.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/internal/state/state.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/rpc.go
+usr/share/gocode/src/github.com/danos/vyatta-kdump/state.go
