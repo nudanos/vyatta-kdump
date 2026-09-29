@@ -1,17 +1,20 @@
 Source: vyatta-kdump
-Section: contrib/admin
+Section: admin
 Priority: optional
-Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
-Build-Depends: debhelper (>= 9.20160709),
-               config-package-dev (>= 4.15~),
-               dh-golang,
-               dh-vci,
-               dh-yang,
-               golang-any,
-               golang-github-danos-configd-client-dev,
-               golang-github-danos-configd-rpc-dev,
-               golang-github-danos-vci-dev,
-Standards-Version: 3.9.8
+Maintainer: NuDanOS Maintainers <jon@fernandez.tech>
+Build-Depends: debhelper-compat (= 13),
+ config-package-dev (>= 4.15~),
+ dh-golang,
+ dh-vci,
+ dh-yang,
+ golang-any,
+ golang-github-danos-configd-client-dev,
+ golang-github-danos-configd-rpc-dev,
+ golang-github-danos-vci-dev
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/nudanos/vyatta-kdump.git
+Vcs-Browser: https://github.com/nudanos/vyatta-kdump
 
 Package: vci-kdump
 Architecture: any
@@ -22,7 +25,7 @@ Description: VCI KDump Component
 Package: vyatta-system-crash-dump-v1-yang
 Architecture: all
 Depends: ${misc:Depends}, ${yang:Depends}
-Section: contrib/admin
+Section: admin
 Description: vyatta-system-crash-dump-v1 module
  The YANG module for vyatta-system-crash-dump-v1. System configuration
  and states for kernel crash dump feature.
@@ -30,7 +33,7 @@ Description: vyatta-system-crash-dump-v1 module
 Package: vyatta-op-crash-dump-v1-yang
 Architecture: all
 Depends: vci-kdump (>= ${source:Version}), ${yang:Depends}, ${misc:Depends}
-Section: contrib/admin
+Section: admin
 Description: vyatta-op-crash-dump-v1 module
  The YANG module for vyatta-op-crash-dump-v1. Operational commands
  for kernel crash dump feature.

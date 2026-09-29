@@ -12,7 +12,7 @@ GOBUILDDIR := _build
 
 
 %:
-	dh $@ --buildsystem=golang --with=golang,vci,yang,systemd,config-package --builddirectory=$(GOBUILDDIR)
+	dh $@ --buildsystem=golang --with golang,vci,yang,config-package --builddirectory=$(GOBUILDDIR)
 
 override_dh_auto_build: vet
 	dh_auto_build
@@ -23,10 +23,7 @@ vet:
 		GO111MODULE=off GOPATH=$(CURDIR)/$(GOBUILDDIR) go vet $(DH_GOPKG); \
 	fi
 
-override_dh_systemd_enable:
-	dh_systemd_enable --package=vyatta-kdump-config --name=vyatta-kdump-load
-	dh_systemd_enable --package=vyatta-kdump-config --name=vyatta-kdump-dump --no-enable
+override_dh_installsystemd:
+	dh_installsystemd --package=vyatta-kdump-config --name=vyatta-kdump-load --no-start
+	dh_installsystemd --package=vyatta-kdump-config --name=vyatta-kdump-dump --no-enable --no-start
 
-override_dh_systemd_start:
-	dh_systemd_start --package=vyatta-kdump-config --name=vyatta-kdump-load --no-start
-	dh_systemd_start --package=vyatta-kdump-config --name=vyatta-kdump-dump --no-start
