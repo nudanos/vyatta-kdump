@@ -17,7 +17,7 @@ GOBUILDDIR := _build
 override_dh_auto_build: vet
 	dh_auto_build
 
-# We do not vet vendor code
+# NuDanOS: vet every Go package, vendored code included
 vet:
 	if go doc cmd/vet >/dev/null 2>&1; then \
 		GO111MODULE=off GOPATH=$(CURDIR)/$(GOBUILDDIR) go vet $(DH_GOPKG); \
